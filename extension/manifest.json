@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Dva lístky do Dejvic",
+  "version": "0.2.0",
+  "description": "Osobní asistent pro výběr dvou lístků do Dejvického divadla. Platbu dokončuješ ručně.",
+  "minimum_chrome_version": "120",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwJKYpMcLwrWbnnbsX4CjmKMD78lcleELqO2lRDUsbRb450DPZAAEmLeORejc1Zl/ntd0Z2Kq6ZJQBAO1Z2sfuySyS/fHsYqWFskmQn57t6z7olE+8tV1UcFJp5EytkiNSpWWT5J4MCyfta7QYX8XnjPF8GFE5wYheEGtbFISyNvRbydcKVBly/3vW8vQA+Oce21ytB01rGH4Tc6K2dgagEFchXI4rhmjwQvsD+HDjr9XIRn5G+Rc2FdVxS+oze0xOBRLMFnq7tYwB/oDy2+QI5p2DW7sucPxPqFWcKgwcqrzRJTMVeW63ZgU7Fx5AHdCN41RF9moISu8JJtM3hNflwIDAQAB",
+  "permissions": [
+    "storage",
+    "alarms",
+    "scripting",
+    "debugger",
+    "power",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://www.dejvickedivadlo.cz/*",
+    "https://www.ticketportal.cz/*",
+    "https://ticketportal.cz/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Otevřít Dva lístky do Dejvic"
+  },
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
